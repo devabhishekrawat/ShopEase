@@ -96,7 +96,7 @@ function renderProducts(items){
 
 
         card.innerHTML = `
-
+            <div class="product-image">
             <img 
             src="${product.image}"
             alt="${product.title}">
@@ -115,7 +115,7 @@ function renderProducts(items){
             <strong>
             $${product.price}
             </strong>
-
+          </div>
         `;
 
 

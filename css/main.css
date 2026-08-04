@@ -226,8 +226,7 @@ body {
 /* ===Section Common Style====== */
 
 
-.products,
-.testimonials {
+.products {
 
     width: min(1200px, 90%);
 
@@ -310,11 +309,13 @@ body {
 
     width: 100%;
 
-    height: 220px;
+    height: 250px;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    border-radius: 10px;
+    background: white;
+
+    display: block;
 
 }
 
@@ -355,31 +356,24 @@ body {
 
 /* ===Testimonials==== */
 
+.testimonial-slider {
 
-.testimonials {
-
-    background: #f1f5f9;
-
-    padding: 70px 5%;
-
-    width: 100%;
-
-}
-
-
-
-.testimonial-grid {
+    overflow: hidden;
 
     width: min(1200px, 90%);
 
     margin: auto;
 
-    display: grid;
+}
 
-    grid-template-columns:
-        repeat(2, 1fr);
+
+.testimonial-track {
+
+    display: flex;
 
     gap: 30px;
+
+    transition: transform .8s ease-in-out;
 
 }
 
@@ -387,28 +381,18 @@ body {
 
 .testimonial-card {
 
-    background: white;
+    flex: 0 0 calc((100% - 60px) / 3);
 
     padding: 30px;
 
-    border-radius: 15px;
+    background: #fff;
+
+    border-radius: 16px;
 
     box-shadow:
-        0 5px 20px rgba(0, 0, 0, .06);
+        0 10px 25px rgba(0,0,0,.08);
 
 }
-
-
-
-.testimonial-card p {
-
-    font-style: italic;
-
-    margin-bottom: 15px;
-
-}
-
-
 
 
 
@@ -449,6 +433,63 @@ body {
 
 }
 
+/* toggle theme css */
+.theme-toggle {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, .35);
+
+    transition: all .3s ease;
+
+    z-index: 999;
+
+}
+
+
+
+.theme-toggle:hover {
+
+    transform: translateY(-3px);
+
+    background: #1d4ed8;
+
+}
+
+
+
+.theme-icon {
+
+    width: 24px;
+
+    height: 24px;
+
+}
 
 
 
@@ -481,12 +522,11 @@ body {
     }
 
 
-    .testimonial-grid {
+    .testimonial-card{
 
-        grid-template-columns: 1fr;
+    flex:0 0 100%;
 
-    }
-
+}
 
 }
 
