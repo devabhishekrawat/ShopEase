@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: your domain
+Sitemap: https://deabhishekrawat.github.io/ShopEase/
