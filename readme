@@ -158,8 +158,8 @@ Open the project using **VS Code Live Server** or any local development server.
 
 | Metric         | Score |
 | -------------- | :---: |
-| Performance    |   82  |
-| Accessibility  |   87  |
+| Performance    |   98  |
+| Accessibility  |   100  |
 | Best Practices |  100  |
 | SEO            |  100  |
 
