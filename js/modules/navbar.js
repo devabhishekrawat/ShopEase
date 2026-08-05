@@ -27,7 +27,7 @@ export async function loadNavbar() {
 
     const currentPath = window.location.pathname;
 
-
+    
     if (currentPath.includes("/pages/")) {
 
         navbarPath = "../component/navbar.html";
@@ -43,7 +43,7 @@ export async function loadNavbar() {
         navbarPath = "./component/navbar.html";
 
     }
-
+    console.log(navbarPath);
 
     const response = await fetch(navbarPath);
 
