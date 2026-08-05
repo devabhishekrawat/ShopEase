@@ -1,119 +1,119 @@
-import { loadNavbar } from "./modules/navbar.js";
+import { loadNavbar } from "./navbar.js";
 
-
+console.log("1")
 loadNavbar();
 
 
 
-
+console.log("2")
 const contactForm =
-document.getElementById("contact-form");
+    document.getElementById("contact-form");
 
-
+console.log("3",contactForm)
 
 const newsletterForm =
-document.getElementById("newsletter-form");
+    document.getElementById("newsletter-form");
 
 
 
 
 
 contactForm?.addEventListener(
-"submit",
-(e)=>{
+    "submit",
+    (e) => {
 
 
-    e.preventDefault();
+        e.preventDefault();
 
 
-
-    clearErrors();
-
-
-
-    let valid=true;
+        console.log("Submit event fired");
+        clearErrors();
 
 
 
-    const name =
-    document.getElementById("name").value.trim();
-
-
-    const email =
-    document.getElementById("email").value.trim();
-
-
-    const message =
-    document.getElementById("message").value.trim();
+        let valid = true;
 
 
 
+        const name =
+            document.getElementById("name").value.trim();
 
 
-    if(name.length < 3){
-
-        showError(
-        "name",
-        "Name must contain at least 3 characters");
-
-        valid=false;
-
-    }
+        const email =
+            document.getElementById("email").value.trim();
 
 
-
-
-    if(!validateEmail(email)){
-
-
-        showError(
-        "email",
-        "Enter a valid email address");
-
-        valid=false;
-
-    }
-
-
-
-
-    if(message.length < 10){
-
-
-        showError(
-        "message",
-        "Query must contain at least 10 characters");
-
-        valid=false;
-
-
-    }
+        const message =
+            document.getElementById("message").value.trim();
 
 
 
 
 
-    if(valid){
+        if (name.length < 3) {
+
+            showError(
+                "name",
+                "Name must contain at least 3 characters");
+
+            valid = false;
+
+        }
 
 
-        const status =
-        document.getElementById("form-status");
 
 
-        status.textContent =
-        "Message sent successfully!";
+        if (!validateEmail(email)) {
 
 
-        status.className="success";
+            showError(
+                "email",
+                "Enter a valid email address");
+
+            valid = false;
+
+        }
 
 
-        contactForm.reset();
 
 
-    }
+        if (message.length < 10) {
 
 
-});
+            showError(
+                "message",
+                "Query must contain at least 10 characters");
+
+            valid = false;
+
+
+        }
+
+
+
+
+
+        if (valid) {
+
+
+            const status =
+                document.getElementById("form-status");
+
+
+            status.textContent =
+                "Message sent successfully!";
+
+
+            status.className = "success";
+
+
+            contactForm.reset();
+
+
+        }
+
+
+    });
 
 
 
@@ -122,68 +122,68 @@ contactForm?.addEventListener(
 
 
 newsletterForm?.addEventListener(
-"submit",
-(e)=>{
+    "submit",
+    (e) => {
 
 
-e.preventDefault();
-
-
-
-const email =
-document.getElementById(
-"newsletter-email"
-).value.trim();
+        e.preventDefault();
 
 
 
-const status =
-document.getElementById(
-"newsletter-status"
-);
+        const email =
+            document.getElementById(
+                "newsletter-email"
+            ).value.trim();
 
 
 
-if(!validateEmail(email)){
-
-
-    status.textContent =
-    "Please enter a valid email";
-
-
-    status.className="failed";
-
-
-    return;
-
-}
+        const status =
+            document.getElementById(
+                "newsletter-status"
+            );
 
 
 
-status.textContent =
-"Subscribed successfully!";
+        if (!validateEmail(email)) {
 
 
-status.className="success";
+            status.textContent =
+                "Please enter a valid email";
 
 
-newsletterForm.reset();
+            status.className = "failed";
+
+
+            return;
+
+        }
 
 
 
-});
+        status.textContent =
+            "Subscribed successfully!";
+
+
+        status.className = "success";
+
+
+        newsletterForm.reset();
 
 
 
+    });
 
 
 
 
-function validateEmail(email){
 
 
-return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-.test(email);
+
+function validateEmail(email) {
+
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
 
 
 }
@@ -193,18 +193,18 @@ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 
 function showError(
-field,
-message){
+    field,
+    message) {
 
 
-const input =
-document.getElementById(field);
+    const input =
+        document.getElementById(field);
 
 
 
-input
-.nextElementSibling
-.textContent=message;
+    input
+        .nextElementSibling
+        .textContent = message;
 
 
 
@@ -212,16 +212,16 @@ input
 
 
 
-function clearErrors(){
+function clearErrors() {
 
 
-document
-.querySelectorAll(".error")
-.forEach(error=>{
+    document
+        .querySelectorAll(".error")
+        .forEach(error => {
 
-    error.textContent="";
+            error.textContent = "";
 
-});
+        });
 
 
 }

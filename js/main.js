@@ -139,6 +139,6 @@ function renderProducts(products) {
 //     window.location.href = "../pages/ErrorPage/error.html";
 // }
 
-
+console.log("main.js loaded");
 loadNavbar();
 loadThemeToggle();
