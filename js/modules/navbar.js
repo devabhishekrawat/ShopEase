@@ -1,40 +1,58 @@
-export async function loadNavbar() {
-
-    const navbar = document.getElementById("navbar");
-
-    if (!navbar) return;
+export async function loadNavbar(){
 
 
-    const response = await fetch("/component/navbar.html");
+    const navbar =
+    document.getElementById("navbar");
 
-    const html = await response.text();
+
+    if(!navbar) return;
+
+
+
+    const response =
+    await fetch("/component/navbar.html");
+
+
+    const html =
+    await response.text();
 
 
     navbar.innerHTML = html;
 
 
+
     setActiveNav();
+
+    setupMobileMenu();
+
 
 }
 
 
 
 
-function setActiveNav() {
-
-    const currentPath = window.location.pathname;
 
 
-    const navLinks = document.querySelectorAll(".nav-link");
+
+function setActiveNav(){
 
 
-    navLinks.forEach(link => {
+    const currentPath =
+    window.location.pathname;
 
 
-        const linkPath = new URL(link.href).pathname;
+
+    document
+    .querySelectorAll(".nav-link")
+    .forEach(link=>{
 
 
-        if (linkPath === currentPath) {
+        const linkPath =
+        new URL(link.href).pathname;
+
+
+
+        if(linkPath === currentPath){
 
             link.classList.add("active");
 
@@ -42,5 +60,78 @@ function setActiveNav() {
 
 
     });
+
+
+}
+
+
+
+
+
+
+
+
+function setupMobileMenu(){
+
+
+    const menuButton =
+    document.getElementById("menu-toggle");
+
+
+    const navLinks =
+    document.getElementById("nav-link");
+
+
+
+    if(!menuButton || !navLinks)
+        return;
+
+
+
+
+    menuButton.addEventListener("click",()=>{
+
+        console.log("clicked");
+        const isOpen =
+        navLinks.classList.toggle("active");
+
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+
+    });
+
+
+
+
+
+    // close after clicking link
+
+    document
+    .querySelectorAll(".nav-link")
+    .forEach(link=>{
+
+
+        link.addEventListener("click",()=>{
+
+
+            navLinks.classList.remove("active");
+
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                false
+            );
+
+
+        });
+
+
+    });
+
 
 }

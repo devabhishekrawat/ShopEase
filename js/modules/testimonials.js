@@ -3,37 +3,60 @@ import testimonials from "../../data/testimonials-data.js";
 const track =
 document.getElementById("testimonial-track");
 
-const ITEMS_PER_SLIDE = 3;
-
 let currentIndex = 0;
 
-if(track){
+let visibleCards = 3;
+
+if (track) {
 
     renderTestimonials();
 
-    setInterval(nextSlide,4000);
+    updateSlider();
+
+    window.addEventListener(
+        "resize",
+        updateSlider
+    );
+
+    setInterval(nextSlide, 4000);
 
 }
 
+function getVisibleCards() {
 
+    if (window.innerWidth <= 600) {
 
-function renderTestimonials(){
+        return 1;
 
-    testimonials.forEach(testimonial=>{
+    }
+
+    if (window.innerWidth <= 992) {
+
+        return 2;
+
+    }
+
+    return 3;
+
+}
+
+function renderTestimonials() {
+
+    track.innerHTML = "";
+
+    testimonials.forEach(testimonial => {
 
         const article =
-        document.createElement("article");
+            document.createElement("article");
 
         article.className =
-        "testimonial-card";
+            "testimonial-card";
 
         article.innerHTML = `
 
             <blockquote>
 
-                <p>
-                    "${testimonial.message}"
-                </p>
+                <p>"${testimonial.message}"</p>
 
             </blockquote>
 
@@ -50,7 +73,9 @@ function renderTestimonials(){
                 <h3>${testimonial.name}</h3>
 
                 <p class="customer-role">
+
                     ${testimonial.role}
+
                 </p>
 
             </footer>
@@ -63,23 +88,46 @@ function renderTestimonials(){
 
 }
 
+function updateSlider() {
 
+    visibleCards = getVisibleCards();
 
-function nextSlide(){
+    currentIndex = 0;
+
+    moveSlider();
+
+}
+
+function nextSlide() {
 
     currentIndex++;
 
-    if(currentIndex >
-        testimonials.length-ITEMS_PER_SLIDE){
+    if (
+        currentIndex >
+        testimonials.length - visibleCards
+    ) {
 
         currentIndex = 0;
 
     }
 
-    const percentage =
-    (100/ITEMS_PER_SLIDE) * currentIndex;
+    moveSlider();
+
+}
+
+function moveSlider() {
+
+    const card =
+        document.querySelector(".testimonial-card");
+
+    if (!card) return;
+
+    const gap = 24;
+
+    const slideWidth =
+        card.offsetWidth + gap;
 
     track.style.transform =
-    `translateX(-${percentage}%)`;
+        `translateX(-${currentIndex * slideWidth}px)`;
 
 }

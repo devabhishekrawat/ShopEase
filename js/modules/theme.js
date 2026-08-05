@@ -10,7 +10,7 @@ export async function loadThemeToggle() {
 
 
     const response =
-        await fetch("/component/theme-toggle.html");
+        await fetch("../../component/theme-toggle.html");
 
 
     const html =

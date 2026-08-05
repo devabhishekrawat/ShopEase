@@ -1,0 +1,168 @@
+/* ======================
+   Contact Page
+====================== */
+
+
+.contact-section{
+
+    width:min(1200px,90%);
+
+    margin:70px auto;
+
+}
+
+
+
+.contact-container{
+
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+
+
+.contact-form,
+.newsletter{
+
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:18px;
+
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+
+
+.form-group{
+
+
+    margin-bottom:20px;
+
+}
+
+
+
+.form-group label,
+.newsletter label{
+
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+
+
+
+input,
+textarea{
+
+
+    width:100%;
+
+    padding:14px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
+    outline:none;
+
+}
+
+
+
+
+input:focus,
+textarea:focus{
+
+
+    border-color:#2563eb;
+
+}
+
+
+
+.error{
+
+
+    color:#dc2626;
+
+    display:block;
+
+    margin-top:5px;
+
+}
+
+
+
+#form-status,
+#newsletter-status{
+
+
+    margin-top:15px;
+
+    font-weight:600;
+
+}
+
+
+
+.success{
+
+    color:#16a34a;
+
+}
+
+
+
+.failed{
+
+    color:#dc2626;
+
+}
+
+
+
+
+
+.newsletter h2{
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+@media(max-width:800px){
+
+
+.contact-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+}
