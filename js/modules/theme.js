@@ -9,12 +9,54 @@ export async function loadThemeToggle() {
 
 
 
+    let themePath;
+
+
+    const currentPath = window.location.pathname;
+
+
+
+    if (currentPath.includes("/pages/products/")) {
+
+
+        themePath = "../../component/theme-toggle.html";
+
+
+    }
+    else if (currentPath.includes("/pages/ContactUs/")) {
+
+
+        themePath = "../../component/theme-toggle.html";
+
+
+    }
+    else {
+
+
+        // index.html
+        themePath = "./component/theme-toggle.html";
+
+
+    }
+
+
+
     const response =
-        await fetch("../../component/theme-toggle.html");
+        await fetch(themePath);
+
+
+
+    if (!response.ok) {
+
+        throw new Error("Theme toggle failed to load");
+
+    }
+
 
 
     const html =
         await response.text();
+
 
 
     container.innerHTML = html;
@@ -52,14 +94,10 @@ export async function loadThemeToggle() {
 
 
 
-
-
     button.addEventListener("click", () => {
 
 
-
         document.body.classList.toggle("dark");
-
 
 
         const darkMode =
@@ -73,13 +111,10 @@ export async function loadThemeToggle() {
         );
 
 
-
         updateThemeIcon(button, darkMode);
 
 
-
     });
-
 
 
 }

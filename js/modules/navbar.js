@@ -1,31 +1,51 @@
-export async function loadNavbar(){
+export async function loadNavbar() {
+
+    const navbar = document.getElementById("navbar");
+
+    if (!navbar) return;
 
 
-    const navbar =
-    document.getElementById("navbar");
+    let navbarPath;
 
 
-    if(!navbar) return;
+    const currentPath = window.location.pathname;
 
 
+    if (currentPath.includes("/pages/")) {
 
-    const response =
-    await fetch("./component/navbar.html");
+        navbarPath = "../../component/navbar.html";
+
+    }
+    else if (currentPath.includes("/pages/")) {
+
+        navbarPath = "../../component/navbar.html";
+
+    }
+    else {
+
+        navbarPath = "./component/navbar.html";
+
+    }
 
 
-    const html =
-    await response.text();
+    const response = await fetch(navbarPath);
+
+
+    if (!response.ok) {
+        throw new Error("Navbar failed to load");
+    }
+
+
+    const html = await response.text();
 
 
     navbar.innerHTML = html;
-
 
 
     setActiveNav();
 
     setupMobileMenu();
 
-
 }
 
 
@@ -34,32 +54,32 @@ export async function loadNavbar(){
 
 
 
-function setActiveNav(){
+function setActiveNav() {
 
 
     const currentPath =
-    window.location.pathname;
+        window.location.pathname;
 
 
 
     document
-    .querySelectorAll(".nav-link")
-    .forEach(link=>{
+        .querySelectorAll(".nav-link")
+        .forEach(link => {
 
 
-        const linkPath =
-        new URL(link.href).pathname;
+            const linkPath =
+                new URL(link.href).pathname;
 
 
 
-        if(linkPath === currentPath){
+            if (linkPath === currentPath) {
 
-            link.classList.add("active");
+                link.classList.add("active");
 
-        }
+            }
 
 
-    });
+        });
 
 
 }
@@ -71,29 +91,29 @@ function setActiveNav(){
 
 
 
-function setupMobileMenu(){
+function setupMobileMenu() {
 
 
     const menuButton =
-    document.getElementById("menu-toggle");
+        document.getElementById("menu-toggle");
 
 
     const navLinks =
-    document.getElementById("nav-link");
+        document.getElementById("nav-link");
 
 
 
-    if(!menuButton || !navLinks)
+    if (!menuButton || !navLinks)
         return;
 
 
 
 
-    menuButton.addEventListener("click",()=>{
+    menuButton.addEventListener("click", () => {
 
         console.log("clicked");
         const isOpen =
-        navLinks.classList.toggle("active");
+            navLinks.classList.toggle("active");
 
 
 
@@ -112,26 +132,26 @@ function setupMobileMenu(){
     // close after clicking link
 
     document
-    .querySelectorAll(".nav-link")
-    .forEach(link=>{
+        .querySelectorAll(".nav-link")
+        .forEach(link => {
 
 
-        link.addEventListener("click",()=>{
+            link.addEventListener("click", () => {
 
 
-            navLinks.classList.remove("active");
+                navLinks.classList.remove("active");
 
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                false
-            );
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    false
+                );
+
+
+            });
 
 
         });
-
-
-    });
 
 
 }
