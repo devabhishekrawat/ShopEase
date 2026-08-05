@@ -10,7 +10,7 @@ export async function loadNavbar(){
 
 
     const response =
-    await fetch("/component/navbar.html");
+    await fetch("./component/navbar.html");
 
 
     const html =
