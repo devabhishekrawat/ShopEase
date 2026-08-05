@@ -1,76 +1,99 @@
-# 🛍️ ShopEase - Modern E-Commerce Website
+# 🛍️ ShopEase
 
-A responsive front-end e-commerce website built using **HTML5, CSS3, and Vanilla JavaScript (ES6 Modules)**. ShopEase demonstrates modern web development practices including reusable components, API integration, responsive layouts, dark mode, form validation, and accessibility.
-
----
-
-# 📖 Project Overview
-
-ShopEase is a fully responsive shopping website that fetches products dynamically from the **Fake Store API** and displays them in a modern UI. The project includes reusable components, a responsive navigation bar, dynamic product rendering, testimonial carousel, dark/light theme toggle, and a validated contact form.
-
-This project was built to practice:
-
-- Semantic HTML5
-- Responsive CSS
-- JavaScript ES6 Modules
-- API Fetching
-- DOM Manipulation
-- Local Storage
-- Form Validation
-- Accessibility
+A modern, responsive **e-commerce frontend** built with **HTML5, CSS3, and Vanilla JavaScript (ES6 Modules)**. The application fetches products dynamically from the **Fake Store API** and demonstrates modern frontend development practices, including reusable components, responsive layouts, accessibility, theme persistence, and modular JavaScript.
 
 ---
 
-# ✨ Features
+## 📸 Preview
 
-## 🏠 Home Page
+> Add screenshots or GIFs here.
 
-- Responsive Hero Section
-- Featured Products
-- Random products displayed on every page refresh
-- Auto-sliding testimonial carousel
-- Dark / Light Theme Toggle
-- Responsive Navigation Bar
-- Mobile Hamburger Menu
+| Home                             | Products                             | Contact                             |
+| -------------------------------- | ------------------------------------ | ----------------------------------- |
+| `assets/images/home-preview.png` | `assets/images/products-preview.png` | `assets/images/contact-preview.png` |
 
 ---
 
-## 🛒 Products Page
+## 🌐 Live Demo
 
-- Products fetched from FakeStore API
-- Search Products
-- Filter by Category
-- Responsive Product Grid
-- Loading Indicator
-- Dynamic Product Cards
+* **Live Website:** `https://yourusername.github.io/ShopEase/`
+* **Repository:** `https://github.com/yourusername/ShopEase`
 
 ---
 
-## 📞 Contact Page
+## ✨ Features
 
-- Contact Form
-- Name Validation
-- Email Validation
-- Query Validation
-- Newsletter Subscription
-- Success Message after Submission
+### 🏠 Home
+
+* Responsive hero section
+* Featured products
+* Random products displayed on every refresh
+* Auto-sliding testimonial carousel
+* Dark / Light mode
+* Sticky navigation bar
+* Mobile-friendly hamburger menu
+
+### 🛍️ Products
+
+* Products fetched from the Fake Store API
+* Search products
+* Filter by category
+* Responsive product grid
+* Loading indicator
+* Dynamic product cards
+
+### 📞 Contact
+
+* Contact form
+* Client-side validation
+* Newsletter subscription
+* Success message after submission
+
+### 🎯 General
+
+* Responsive design
+* Semantic HTML5
+* CSS Grid & Flexbox
+* Reusable components
+* Accessible navigation
+* Keyboard-friendly interface
+* Theme persistence with Local Storage
 
 ---
 
-## 🎨 Common Features
+## 🛠️ Tech Stack
 
-- Responsive Layout
-- Sticky Navigation Bar
-- Dark Mode
-- Theme stored using LocalStorage
-- Reusable Components
-- Semantic HTML5
-- Accessible Forms
-- Keyboard Friendly Navigation
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6 Modules)
+
+### CSS
+
+* Flexbox
+* CSS Grid
+* Media Queries
+* Animations
+* Responsive Design
+* CSS Variables
+
+### JavaScript
+
+* Fetch API
+* Async / Await
+* DOM Manipulation
+* ES6 Modules
+* Local Storage
+* Form Validation
+
+### API
+
+* Fake Store API
 
 ---
 
-# 📁 Folder Structure
+## 📁 Project Structure
 
 ```text
 ShopEase/
@@ -85,10 +108,10 @@ ShopEase/
 │   ├── main.js
 │   └── modules/
 │       ├── navbar.js
-│       ├── theme.js
 │       ├── products.js
 │       ├── testimonials.js
-│       └── contact.js
+│       ├── contact.js
+│       └── theme.js
 │
 ├── component/
 │   ├── navbar.html
@@ -98,11 +121,8 @@ ShopEase/
 │   └── testimonials-data.js
 │
 ├── pages/
-│   ├── products/
-│   │   └── products.html
-│   │
-│   └── ContactUs/
-│       └── contact.html
+│   ├- products.html
+│   |─ contact.html
 │
 ├── assets/
 │   ├── images/
@@ -115,153 +135,106 @@ ShopEase/
 
 ---
 
-# 🛠️ Technologies Used
+## 🚀 Getting Started
 
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript (ES6 Modules)
-
-### CSS Concepts
-
-- Flexbox
-- CSS Grid
-- Media Queries
-- Animations
-- Responsive Design
-- Dark Theme
-
-### JavaScript Concepts
-
-- Fetch API
-- Async / Await
-- DOM Manipulation
-- Local Storage
-- Form Validation
-- Modular JavaScript
-
-### API
-
-- Fake Store API
-
----
-
-# 🚀 Setup Instructions
-
-## Clone the Repository
+### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/shopease.git
+git clone https://github.com/yourusername/ShopEase.git
 ```
 
-## Navigate into the Project
+### Navigate to the project
 
 ```bash
-cd shopease
+cd ShopEase
 ```
 
-## Open the Project
+### Run locally
 
-Run the project using:
-
-- VS Code Live Server
-- Any local web server
-
+Open the project using **VS Code Live Server** or any local development server.
 
 ---
 
-# 📊 Lighthouse Scores
+## 📊 Lighthouse Score
 
-| Category | Score |
-|----------|-------|
-| Performance | 82 |
-| Accessibility | 87 |
-| Best Practices | 100 |
-| SEO | 100 |
+| Metric         | Score |
+| -------------- | :---: |
+| Performance    |   82  |
+| Accessibility  |   87  |
+| Best Practices |  100  |
+| SEO            |  100  |
 
 ---
 
-# ♿ Accessibility Considerations
+## ♿ Accessibility
 
 This project follows accessibility best practices:
 
-- Semantic HTML5 elements
-- Proper heading hierarchy
-- ARIA labels
-- Accessible navigation
-- Keyboard navigation support
-- Form labels
-- Image alt attributes
-- Visible focus indicators
-- High color contrast
-- Responsive typography
+* Semantic HTML5
+* Proper heading hierarchy
+* ARIA attributes
+* Keyboard navigation
+* Skip navigation link
+* Form labels
+* Focus indicators
+* Descriptive image alt text
+* Responsive typography
+* High color contrast
 
 ---
 
-# ⚡ Performance Optimizations
+## ⚡ Performance Optimizations
 
-- Products loaded asynchronously using Fetch API
-- Reusable JavaScript modules
-- Minimal DOM manipulation
-- Optimized CSS
-- Responsive images
-- Theme persistence using LocalStorage
-- Component-based structure
-- Efficient layouts with Flexbox and CSS Grid
+* Asynchronous API requests
+* Modular JavaScript
+* Efficient DOM updates
+* Responsive layouts
+* Optimized CSS
+* Theme persistence with Local Storage
 
 ---
 
-# ⚠️ Known Limitations
+## ⚠️ Current Limitations
 
-- No backend integration
-- Contact form does not send emails
-- No product details page
-- No shopping cart functionality
-- No user authentication
-- Product images depend on FakeStore API
-
----
-
-# 🚀 Future Improvements
-
-- Shopping Cart
-- Wishlist
-- Product Details Page
-- Checkout Flow
-- Payment Gateway Integration
-- User Authentication
-- Order History
-- Product Reviews
-- Product Ratings
-- Search Suggestions
-- Pagination
-- Admin Dashboard
-- Progressive Web App (PWA)
-- Backend Integration
-- Database Support
-- Product Image Carousel
-- Enhanced Animations
+* No backend integration
+* Contact form is frontend only
+* No authentication
+* No shopping cart
+* No checkout flow
+* No product details page
+* Product data depends on the Fake Store API
 
 ---
 
-# 🌐 Live Demo
+## 🚀 Future Enhancements
 
-GitHub Pages:
-
-```text
-https://github.com/devabhishekrawat/ShopEase
-```
-
+* Shopping Cart
+* Wishlist
+* Product Details
+* Checkout Flow
+* Payment Integration
+* Authentication
+* Order History
+* Product Reviews
+* Ratings
+* Search Suggestions
+* Pagination
+* Admin Dashboard
+* Progressive Web App (PWA)
+* Backend Integration
+* Database Support
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Abhishek Rawat**
 
+* GitHub: https://github.com/yourusername
+* LinkedIn: https://linkedin.com/in/yourprofile
+
 ---
 
-# 📄 License
+## 📄 License
 
-This project is created for educational purposes and showcases front-end web development using HTML, CSS, and JavaScript.
+This project is intended for educational and portfolio purposes.
