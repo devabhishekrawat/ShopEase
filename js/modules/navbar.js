@@ -15,7 +15,6 @@ function getBasePath() {
 }
 
 
-
 export async function loadNavbar() {
 
     const navbar = document.getElementById("navbar");
@@ -31,12 +30,12 @@ export async function loadNavbar() {
 
     if (currentPath.includes("/pages/")) {
 
-        navbarPath = "../../component/navbar.html";
+        navbarPath = "../component/navbar.html";
 
     }
     else if (currentPath.includes("/pages/")) {
 
-        navbarPath = "../../component/navbar.html";
+        navbarPath = "../component/navbar.html";
 
     }
     else {
