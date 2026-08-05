@@ -1,3 +1,21 @@
+function getBasePath() {
+
+    const path = window.location.pathname;
+
+    // GitHub Pages
+    if (window.location.hostname.includes("github.io")) {
+
+        return "/ShopEase/";
+
+    }
+
+    // Localhost
+    return "/";
+
+}
+
+
+
 export async function loadNavbar() {
 
     const navbar = document.getElementById("navbar");
@@ -37,9 +55,42 @@ export async function loadNavbar() {
 
 
     const html = await response.text();
-
-
     navbar.innerHTML = html;
+
+
+    const basePath = getBasePath();
+
+
+    // Logo
+    const logo =
+        document.querySelector(".logo img");
+
+
+    if (logo) {
+
+        logo.src =
+            basePath + logo.dataset.image;
+
+    }
+
+
+
+    // Navigation links
+
+    document
+        .querySelectorAll(".nav-link")
+        .forEach(link => {
+
+
+            const page =
+                link.dataset.page;
+
+
+            link.href =
+                basePath + page;
+
+
+        });
 
 
     setActiveNav();
